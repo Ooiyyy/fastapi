@@ -1,0 +1,5 @@
+{
+    // "python.envFile": "${d/TITIp DaTa/fastapi}/.env"
+    "python.terminal.useEnvFile": true
+
+}
