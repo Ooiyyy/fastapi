@@ -21,7 +21,7 @@ app = FastAPI(
 # Add Middleware into FastAPI app pipeline
 app.add_middleware(LoggerMiddleware)
 
-# Include Routes mapped from controller logic
+# Include Routes
 app.include_router(book_route.router)
 
 @app.get("/")
@@ -36,4 +36,5 @@ if __name__ == "__main__":
     port = int(os.getenv("APP_PORT", 8000))
     
     # Run the uvicorn server programmatically
-    uvicorn.run("main:app", host="0.0.0.1", port=port, reload=True)
+    # uvicorn.run("main:app", host="0.0.0.1", port=port, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
