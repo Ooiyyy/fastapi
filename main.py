@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 from database import engine
 from models import book_model
-from routes import book_route
+from routes import book_route, user_route
 from middleware.logger_middleware import LoggerMiddleware
 
 # Load environment variables
@@ -23,6 +23,7 @@ app.add_middleware(LoggerMiddleware)
 
 # Include Routes
 app.include_router(book_route.router)
+app.include_router(user_route.router)
 
 @app.get("/")
 def read_root():
